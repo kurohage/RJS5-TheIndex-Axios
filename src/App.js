@@ -16,8 +16,9 @@ class App extends Component {
   };
 
   selectAuthor = async author => {
+    this.setState({ loading: true });
+
     try {
-      this.setState({ loading: true });
       let res = await axios.get(
         `https://the-index-api.herokuapp.com/api/authors/${author.id}/`
       );

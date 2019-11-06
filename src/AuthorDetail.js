@@ -1,13 +1,13 @@
 import React from "react";
 import BookRow from "./BookRow";
+import axios from "axios";
 
 function AuthorDetail(props) {
   const author = props.author;
   const authorName = `${author.first_name} ${author.last_name}`;
 
-  //<BookRow book={book} key={book.title} authorName={authorName} />
   const books = author.books.map(book => (
-    <BookRow book={book} key={book.title} author={authorName} />
+    <BookRow book={book} key={book.title} />
   ));
 
   return (
